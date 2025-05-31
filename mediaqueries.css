@@ -163,3 +163,20 @@
     font-size: 0.9rem;
     text-decoration: underline;
   }
+
+  @media (max-width: 768px) {
+  .timeline-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .timeline-date {
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline-content {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
