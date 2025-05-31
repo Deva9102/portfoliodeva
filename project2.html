@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Automated Highlight Generation</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #1e1e1e;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+        .back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #444;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  z-index: 999;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #666;
+}
+
+
+    .title {
+      text-align: center;
+    }
+
+    .title h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .title p {
+      font-size: 1rem;
+      color: #ccc;
+      margin: 0.4rem auto;
+      line-height: 1.4;
+      max-width: 900px;
+    }
+
+    .section-boxes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: space-between;
+    }
+
+    .box {
+      flex: 1 1 48%;
+      background-color: #2a2a2a;
+      border-radius: 10px;
+      padding: 1.2rem;
+      box-shadow: 0 0 6px rgba(0,0,0,0.2);
+    }
+
+    .box h2 {
+      margin: 0 0 0.6rem 0;
+      font-size: 1.2rem;
+    }
+
+    .box ul,
+    .box p {
+      color: #ddd;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    .box ul {
+      padding-left: 1.2rem;
+    }
+
+    .box ul li {
+      margin-bottom: 0.4rem;
+    }
+
+    .impact {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .impact h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .impact p {
+      font-size: 0.95rem;
+      color: #ccc;
+      max-width: 850px;
+      margin: 0 auto;
+      line-height: 1.4;
+    }
+
+    .github-link {
+      color: #4da6ff;
+      text-decoration: underline;
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      .section-boxes {
+        flex-direction: column;
+      }
+
+      .box {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">
+      <h1>Automated Highlight Generation from Soccer Matches</h1>
+      <br/>
+      <p>Built an AI-driven system to automatically generate highlight reels from full-length soccer match videos using deep learning for event detection and video summarization.</p>
+      <br/>
+      <p><strong>Motivation:</strong> Full soccer matches span over 90 minutes, with key moments scattered throughout. Manually reviewing and compiling highlights is time-consuming. This system identifies and ranks events like goals and fouls, generating concise highlight reels automatically. This saves time for fans, analysts, and broadcasters.</p>
+    </div>
+
+    <div class="section-boxes">
+      <div class="box">
+        <h2>Key Contributions</h2>
+        <ul>
+          <li>Designed a video segmentation pipeline using the SoccerNet dataset, extracting labeled 10-second clips for key events like goals, fouls, shots, and corners.</li>
+          <li>Used ResNet50 to extract spatial features from video frames and GRUs to model temporal patterns for event classification.</li>
+          <li>Built a 3-layer GRU architecture followed by fully connected layers to classify events across five categories, improving accuracy with dataset expansion.</li>
+          <li>Developed a clip selection and stitching algorithm using a sliding window to include high-impact events within a 5-minute reel.</li>
+          <li>Collaborated on performance evaluation using confusion matrices, F1 plots, and loss curves to refine model performance.</li>
+          <li>Worked on stitching predicted clips into cohesive highlight videos with smooth transitions and temporal flow.</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h2>Tools & Technologies</h2>
+        <p>Python, OpenCV, ResNet50, GRU, PyTorch, SoccerNet Dataset, NumPy, Matplotlib</p>
+      </div>
+    </div>
+
+    <div class="impact">
+      <h2>Impact</h2>
+      <p>
+        Created an automated pipeline for match summarization that can assist broadcasters and sports analysts in generating highlight videos with less manual effort.
+      </p>
+      <a class="github-link" href="https://github.com/aatmaj28/Soccer-Highlight-Generation" target="_blank">GitHub: View Code</a>
+    </div>
+  </div>
+
+   <div class="back-button-container">
+  <a href="index.html#projects" class="back-button">← Back to Projects</a>
+
+</body>
+</html>

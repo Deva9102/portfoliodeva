@@ -1,0 +1,398 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="mediaqueries.css"/>
+</head>
+<body>
+    <nav id="desktop-nav">
+      <div class="logo">Devadarshini Pazhanivel Thenmozhi</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+        <nav id="hamburger-nav">
+      <div class="logo">Devadarshini Pazhanivel Thenmozhi</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="#skills" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#publications" onclick="toggleMenu()">Publications</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </div>
+      </div>
+    </nav>
+     <section id="profile">
+      <div class="section__pic-container">
+        <img src="./assets/devabg.jpeg" alt="Devadarshini profile picture" />
+      </div>
+      <div class="section__text">
+        <p class="section__text__p1">Hello, I'm</p>
+        <h1 class="title">Devadarshini Pazhanivel Thenmozhi</h1>
+       <div class="section__intro">
+  <p class="welcome-line">Welcome to my little corner of projects and passion!</p>
+  <p>I’m currently a Master’s student in Artificial Intelligence at Khoury College of Computer Sciences, Northeastern University, Boston. I’m deeply passionate about building intelligent systems that can make a difference in this world.</p>
+  <p>My journey into AI started with curiosity and a love for solving problems, and it has grown into something deeply personal and purposeful. I’ve always been drawn to projects that blend technology with impact.</p>
+  <p>I love working on ideas at the intersection of healthcare, AI, and machine learning. It’s a space where technology has the power to heal, and that’s what excites me the most.</p>
+  <p>This little space is a glimpse into the things I’ve built, the problems I’ve loved solving, and the path I’m carving in the world of AI and ML. I’m glad you’re here.</p>
+</div>
+        <div class="btn-container">
+          <button
+            class="btn btn-color-2"
+            onclick="window.open('./assets/Devadarshini_Resume__.pdf')"
+          >
+            Resume
+          </button>
+          <button class="btn btn-color-1" onclick="location.href='./#contact'">
+            Contact Info
+          </button>
+        </div>
+        <div id="socials-container">
+          <img
+            src="./assets/linkedin.png"
+            alt="My LinkedIn profile"
+            class="icon"
+            onclick="location.href='https://www.linkedin.com/in/devadarshinipazhthen/'"
+          />
+          <img
+            src="./assets/github.png"
+            alt="My Github profile"
+            class="icon"
+            onclick="location.href='https://github.com/Deva9102'"
+          />
+        </div>
+      </div>
+    </section>
+
+</div>
+
+<section id="about">
+  <p class="section__text__p1">Get To Know More</p>
+  <h1 class="title">About Me</h1>
+
+  <!-- Tab Buttons -->
+  <div class="about-tabs">
+    <div class="details-container tab" onclick="showTab('experience')">
+      <img src="./assets/experience.png" class="icon" />
+      <h3>Experience</h3>
+ <p><strong>Deep Learning Intern</strong><br />
+     National University of Singapore<br />
+     Singapore</p>
+
+  <br />
+
+  <p><strong>AI Intern</strong><br />
+     VLOG Innovations<br />
+     Chennai</p>
+    </div>
+<div class="details-container tab" onclick="showTab('education')">
+  <img src="./assets/education.png" class="icon" />
+  <h3>Education</h3>
+  <p><strong>M.S. in Artificial Intelligence</strong><br />
+     Northeastern University, Boston<br />
+     Expected: May 2026 | GPA: 3.67 / 4.0</p>
+
+  <br />
+
+  <p><strong>B.Tech in Artificial Intelligence and Data Science</strong><br />
+     Easwari Engineering College, Chennai<br />
+     Graduated: May 2024 | CGPA: 9.18 / 10<br />
+     <em>(Graduated at the top of my class)</em></p>
+</div>
+
+
+  </div>
+
+
+<!-- EXPERIENCE TAB -->
+<div class="tab-content" id="experience-tab" style="display: none;">
+
+
+  <!-- NUS -->
+  <div class="experience-entry">
+    <h4>Deep Learning Intern – NUS</h4>
+    <p><strong>Technical Skills:</strong> Python, ResNet50, LSTM, Streamlit, AWS SageMaker, Lambda, Polly</p>
+    <p>Built VizCap, a real-time image captioning and speech generation tool using ResNet50 + LSTM, deployed on AWS SageMaker, Lambda, and Polly with a custom Streamlit interface.</p>
+  </div>
+
+  <!-- VLOG -->
+  <div class="experience-entry">
+    <h4>AI Intern – VLOG Innovations</h4>
+    <p><strong>Technical Skills:</strong> Python, YOLOv5, Tkinter, OpenCV, XML-to-YOLO annotation conversion</p>
+    <p>Developed a PCB defect detection system using YOLOv5 to identify six defect types. Built a Tkinter-based GUI for visualization and severity scoring, achieving high accuracy across 100+ annotated images.</p>
+  </div>
+</div>
+
+
+
+<!-- EDUCATION TAB -->
+<div class="tab-content" id="education-tab" style="display: none;">
+
+  <div class="education-columns">
+    
+    <!-- M.S. Section -->
+    <div class="education-box">
+      <h3>M.S in Artificial Intelligence</h3>
+      <h4>Key Coursework</h4>
+      <ul>
+        <li>Machine Learning</li>
+        <li>Foundations of Artificial Intelligence</li>
+        <li>Natural Language Processing</li>
+        <li>Programming Design Paradigm</li>
+        <li>Algorithms</li>
+      </ul>
+    </div>
+
+    <!-- B.Tech Section -->
+    <div class="education-box">
+      <h3>B.Tech in Artificial Intelligence and Data Science</h3>
+      <h4>Key Coursework</h4>
+      <ul>
+        <li>Machine Learning Techniques</li>
+        <li>Data Exploration and Visualization</li>
+        <li>Artificial Intelligence</li>
+        <li>Deep Learning using TensorFlow</li>
+        <li>Reinforcement Learning</li>
+        <li>Big Data Analytics</li>
+        <li>AI for Robotics</li>
+        <li>Data Analytics with KNIME</li>
+        <li>Computer Vision, OOP, and Cloud Computing</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+</section>
+</div>
+
+
+  <section id="projects">
+  <p class="section__text__p1">Browse My Recent</p>
+  <h1 class="title">Projects</h1>
+
+  <div class="projects-grid">
+
+    <!-- Project 1 -->
+    <div class="project-card" onclick="location.href='project1.html'">
+      <img src="./assets/fetus.jpeg" alt="Project 1" class="project-img" />
+      <h2 class="project-title">Fetal Health Prediction and Clustering</h2>
+      <button class="btn project-btn" onclick="event.stopPropagation(); window.open('https://github.com/Deva9102/Fetal-Health-Prediction-and-Clustering');">GitHub</button>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-card" onclick="location.href='project2.html'">
+      <img src="./assets/soccer.jpeg" alt="Project 2" class="project-img" />
+      <h2 class="project-title">Automatic Sports Highlight Generation</h2>
+      <button class="btn project-btn" onclick="event.stopPropagation(); window.open('https://github.com/aatmaj28/Soccer-Highlight-Generation');">GitHub</button>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project-card" onclick="location.href='project3.html'">
+      <img src="./assets/oral.jpeg" alt="Project 3" class="project-img" />
+      <h2 class="project-title">AI-Powered Oral Tissue Compatibility Evaluation for Dental Implants</h2>
+      <button class="btn project-btn" onclick="event.stopPropagation(); window.open('https://github.com/Deva9102/AI-Powered-OralTissue-Compatibility-Evaluation', '_blank');">GitHub</button>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="project-card" onclick="location.href='project4.html'">
+      <img src="./assets/vis.jpeg" alt="Project 4" class="project-img" />
+      <h2 class="project-title">Vizcap : Real-Time Image Captioning and Speech Generation</h2>
+      <button class="btn project-btn" onclick="event.stopPropagation(); window.open('https://github.com/Deva9102/Real-Time-Image-Captioning-and-Speech-Generation/tree/main');">GitHub</button>
+    </div>
+
+    <!-- Project 5 -->
+    <div class="project-card" onclick="location.href='project5.html'">
+      <img src="./assets/pcb.jpeg" alt="Project 5" class="project-img" />
+      <h2 class="project-title">PCB Defect Detection using YOLOv5</h2>
+      <button class="btn project-btn" onclick="event.stopPropagation(); window.open('https://github.com/Deva9102/PCB_DefectDetection');">GitHub</button>
+    </div>
+
+  </div>
+</section>
+</div>
+
+<section id="experience">
+  <h1 class="title">Experience</h1>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-date">July 2023</div>
+      <div class="timeline-content">
+        <h3>Deep Learning Intern – National University of Singapore (NUS)</h3>
+        <p> 
+          As a Deep Learning Intern at National University of Singapore, I developed VizCap, a real-time image captioning and text-to-speech system to assist visually impaired users.
+Trained deep learning models using ResNet50 + LSTM and deployed the solution using AWS SageMaker, Lambda, and Polly, ensuring seamless cloud-based processing and multilingual audio output.
+Integrated the model into a Streamlit web application and optimized performance under real-world deployment constraints.
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">Jan 2023 - March 2023</div>
+      <div class="timeline-content">
+        <h3>AI Intern – VLOG Innovations</h3>
+        <p> As an AI intern, I was responsible for building an automated visual inspection system for printed circuit boards. I developed a YOLOv5-based object detection model to identify six types of defects and built a Tkinter GUI for visualization and severity analysis. The model delivered reliable performance across over 100 annotated PCB images, validating its effectiveness in defect detection.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- SKILLS  TAB -->
+<section id="skills">
+  <h1 class="title">Skills & Competencies</h1>
+  <p class="section__text__p1">See how my skills and competencies meet and exceed your expectations</p>
+
+  <!-- Tabs -->
+<div class="skills-tabs">
+  <button class="skill-tab" onclick="toggleSkill(this, 'personal')">PERSONAL</button>
+  <button class="skill-tab active" onclick="toggleSkill(this, 'programming')">PROGRAMMING LANGUAGES</button>
+  <button class="skill-tab" onclick="toggleSkill(this, 'tools')">DEVELOPER TOOLS</button>
+  <button class="skill-tab" onclick="toggleSkill(this, 'competencies')">CORE COMPETENCIES</button>
+  <button class="skill-tab active" onclick="toggleSkill(this, 'libraries')">LIBRARIES & FRAMEWORKS</button>
+</div>
+
+
+
+  <!-- Skill Boxes -->
+  <div class="skills-container">
+    <div class="skills-box" id="skills-left"></div>
+    <div class="skills-box" id="skills-right"></div>
+  </div>
+</section>
+</div>
+
+  <!-- Research -->
+<section id="publications">
+  <h1 class="title">Publications</h1>
+
+  <br><br/>
+  <p style="text-align: justify; max-width: 900px; margin: 0 auto; font-weight: bold; color: black; font-size: 1.05rem;">I have collaborated with professors on research projects, actively contributing to idea generation, data collection, curation and research paper writing. I also presented our findings at international conferences, gaining experience in both technical communication and academic workflows. </p>
+  <div class="about-tabs">
+    <div class="details-container tab">
+      <h3>Cognitive Defense: Cyber Attack Prediction</h3>
+      <p><strong>IEEE Jan 2024</strong><br/>
+        <br>
+      Enhanced cyberattack detection using cognitive defense and ML models.</p>
+      <a href="https://doi.org/10.1109/IC3I59117.2023.10397602" target="_blank"><strong>View Publication</strong></a>
+    </div>
+
+    <div class="details-container tab">
+      <h3>IoT-Based Smart Home Automation</h3>
+      <p><strong>IEEE Oct 2023</strong><br/>
+        <br>
+      Reduced energy usage with sensor-controlled home automation system.</p>
+      <a href="https://doi.org/10.1109/I-SMAC58438.2023.10290633" target="_blank"><strong>View Publication</strong></a>
+    </div>
+
+ <div class="details-container tab">
+      <h3>Classification of Fetal Health Using Machine Learning</h3>
+      <p><strong>ICLTSET'23, May 2023</strong><br/>
+        <br>
+      Presented a comparative study on fetal health classification at the ISTE Sponsored 9th International Conference on Latest Trends in Science, Engineering and Technology.</p>
+    </div>
+
+    <div class="details-container tab">
+      <h3>Ultrasonography Guided Oral Tissue Evaluation</h3>
+      <p><strong>ICRTCME Nov 2023</strong><br/>
+        <br>
+      Presented a deep learning approach to evaluate oral tissue compatibility at the International Conference on Recent Trends in Commerce, Management, Science and Engineering.</p>
+    </div>
+  </div>
+</section>
+</section>
+</div>
+
+<!-- Contact -->
+<section id="contact">
+  <p class="section__text__p1">Get in Touch</p>
+  <h1 class="title">Contact Me</h1>
+
+  <div class="contact-info-upper-container">
+
+    <!-- Email -->
+    <div class="contact-info-container">
+      <img
+        src="./assets/email.png"
+        alt="Email icon"
+        class="icon contact-icon email-icon"
+      />
+      <p><a href="mailto:pazhanivelthenmozh.d@northeastern.edu">pazhanivelthenmozh.d@northeastern.edu</a></p>
+    </div>
+
+    <!-- Phone -->
+    <div class="contact-info-container">
+      <img
+        src="./assets/fon.jpeg"
+        alt="Phone icon"
+        class="icon contact-icon"
+      />
+      <p><a href="tel:+16176025527">+1 (617) 602-5527</a></p>
+    </div>
+
+    <!-- LinkedIn -->
+    <div class="contact-info-container">
+      <img
+        src="./assets/linkedin.png"
+        alt="LinkedIn icon"
+        class="icon contact-icon"
+      />
+      <p><a href="https://www.linkedin.com/in/devadarshinipazhthen/" target="_blank">LinkedIn</a></p>
+    </div>
+
+    <!-- GitHub -->
+    <div class="contact-info-container">
+      <img
+        src="./assets/github.png"
+        alt="GitHub icon"
+        class="icon contact-icon"
+      />
+      <p><a href="https://github.com/Deva9102" target="_blank">GitHub</a></p>
+    </div>
+
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="footer-content">
+    <h2>Devadarshini Pazhanivel Thenmozhi</h2>
+    <p>pazhanivelthenmozh.d@northeastern.edu</p>
+    <p>+1 (617) 602-5527</p>
+    <p>Khoury College of Computer Sciences, Northeastern University</p>
+
+    <ul class="footer-nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+</footer>
+
+
+
+    </section>
+<script src="script.js"></script>
+</body>
+</html>

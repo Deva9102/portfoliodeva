@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Automated Highlight Generation</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #1e1e1e;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+        .back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #444;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  z-index: 999;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #666;
+}
+
+
+    .title {
+      text-align: center;
+    }
+
+    .title h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .title p {
+      font-size: 1rem;
+      color: #ccc;
+      margin: 0.4rem auto;
+      line-height: 1.4;
+      max-width: 900px;
+    }
+
+    .section-boxes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: space-between;
+    }
+
+    .box {
+      flex: 1 1 48%;
+      background-color: #2a2a2a;
+      border-radius: 10px;
+      padding: 1.2rem;
+      box-shadow: 0 0 6px rgba(0,0,0,0.2);
+    }
+
+    .box h2 {
+      margin: 0 0 0.6rem 0;
+      font-size: 1.2rem;
+    }
+
+    .box ul,
+    .box p {
+      color: #ddd;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    .box ul {
+      padding-left: 1.2rem;
+    }
+
+    .box ul li {
+      margin-bottom: 0.4rem;
+    }
+
+    .impact {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .impact h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .impact p {
+      font-size: 0.95rem;
+      color: #ccc;
+      max-width: 850px;
+      margin: 0 auto;
+      line-height: 1.4;
+    }
+
+    .github-link {
+      color: #4da6ff;
+      text-decoration: underline;
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      .section-boxes {
+        flex-direction: column;
+      }
+
+      .box {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">
+      <h1>AI-Powered Oral Tissue Compatibility Evaluation for Dental Implants</h1>
+      <br/>
+      <p>Designed a deep learning–based diagnostic system that analyzes ultrasonography images to evaluate oral tissue compatibility for dental implants.</p>
+      <br/>
+      <p><strong>Motivation:</strong> Early implant failures caused by soft tissue issues are more common than late failures, driving this research to improve tissue compatibility assessment using AI and ultrasonography.</p>
+    </div>
+
+    <div class="section-boxes">
+      <div class="box">
+        <h2>Key Contributions</h2>
+        <ul>
+          <li>Built a hybrid model combining Convolutional Neural Networks (CNNs) and Deep Belief Networks (DBNs) to extract and refine complex tissue patterns from ultrasonography images.</li>
+          <li>Implemented classification models using SVM, Random Forest, and Decision Tree, achieving 87% accuracy individually, and enhanced performance to 90.3% using Gradient Boosting ensemble learning.</li>
+          <li>Applied Grad-CAM visualizations to highlight the key regions in ultrasound scans influencing predictions.</li>
+          <li>Developed a real-time web interface allowing doctors to upload ultrasound images and receive instant compatibility predictions.</li>
+          <li>Curated a high quality dataset covering various oral pathologies (e.g., parotitis, sialadenitis, Sjögren’s disease) with preprocessing techniques such as histogram equalization, pixel normalization, and noise reduction.</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h2>Tools & Technologies</h2>
+        <p>Python, TensorFlowm, PyTorch, Scikit-learn, OpenCV, Grad-CAM, Pandas, Matplotlib, Web UI (Streamlit)</p>
+      </div>
+    </div>
+
+    <div class="impact">
+      <h2>Impact</h2>
+      <p>
+        Enabled faster, safer dental implant decisions by giving dentists clear, AI-driven insights from ultrasonography images.
+      <a class="github-link" href="https://github.com/Deva9102/AI-Powered-OralTissue-Compatibility-Evaluation" target="_blank">GitHub: View Code</a>
+    </div>
+  </div>
+
+   <div class="back-button-container">
+  <a href="index.html#projects" class="back-button">← Back to Projects</a>
+
+</body>
+</html>

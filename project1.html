@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fetal Health Risk Prediction</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #1e1e1e;
+      color: white;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #444;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  z-index: 999;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #666;
+}
+
+
+    .title {
+      text-align: center;
+      margin-bottom: 0.8rem;
+    }
+
+    .title h1 {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .overview {
+      text-align: center;
+      max-width: 800px;
+      font-size: 1rem;
+      color: #ccc;
+      margin-bottom: 1.8rem;
+    }
+
+    .boxes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .box {
+      flex: 1 1 48%;
+      background-color: #2a2a2a;
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .box h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .box ul {
+      padding-left: 1rem;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #ddd;
+    }
+
+    .box p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #ddd;
+    }
+
+    .impact {
+      margin-top: 2rem;
+      text-align: center;
+      max-width: 900px;
+    }
+
+    .impact h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .impact p {
+      font-size: 0.95rem;
+      color: #ccc;
+      margin-bottom: 0.8rem;
+    }
+
+    .impact a {
+      color: #66b3ff;
+      font-weight: 500;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .boxes {
+        flex-direction: column;
+      }
+
+      .box {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">
+      <h1>Fetal Health Risk Prediction and Patient Clustering</h1>
+    </div>
+    <div class="overview">
+      Developed a machine learning model to predict fetal health risks from cardiotocography data, enabling interpretable and accurate prenatal risk assessment.
+    </div>
+    <div class="motivation">
+      <strong>Motivation:</strong> With rising concern around prenatal complications, we aimed to leverage machine learning to build a scalable and interpretable system that can proactively flag potential fetal distress and help clinicians make timely, data-driven decisions.
+    </div>
+    <br/>
+    <div class="boxes">
+      <div class="box">
+        <h2>Key Contributions</h2>
+        <ul>
+          <li>Designed a custom continuous fetal risk score (0–100) using PCA to replace fixed class labels, allowing for more precise and meaningful predictions.</li>
+          <li>Built Ridge Regression, Random Forest, and XGBoost models from scratch in Python, and compared them with standard implementations using MAE, RMSE, and R² metrics.</li>
+          <li>Used SHAP explainability to uncover key clinical features driving risk, such as histogram width and variability measures.</li>
+          <li>Created a risk grouping pipeline using both standard and custom implementations of KMeans and Hierarchical Clustering, classifying patients into Low, Moderate, and High Risk.</li>
+          <li>Applied UMAP for dimensionality reduction and visualized clear cluster separations, supported by strong evaluation metrics like Silhouette Score (0.53).</li>
+          <li>Addressed class imbalance and redundant features through outlier filtering, stratified sampling, and correlation-based feature selection to improve model accuracy and reliability.</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h2>Tools & Technologies</h2>
+        <p>
+          Python, Scikit-learn, XGBoost, SHAP, UMAP, PCA,
+          Ridge Regression, KMeans, Hierarchical Clustering, Matplotlib
+        </p>
+      </div>
+    </div>
+
+    <div class="impact">
+      <h2>Impact</h2>
+      <p>
+        Created a clinically interpretable and highly accurate ML pipeline that supports fetal health risk stratification and can potentially aid doctors in early diagnosis and decision-making.
+      </p>
+      <a href="https://github.com/Deva9102/Fetal-Health-Prediction-and-Clustering">GitHub: View Code</a>
+    </div>
+  </div>
+
+  <div class="back-button-container">
+  <a href="index.html#projects" class="back-button">← Back to Projects</a>
+
+</div>
+
+</body>
+</html>
