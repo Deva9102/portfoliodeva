@@ -796,3 +796,29 @@ footer p {
   background-color: #d2d2d2;
 }
 
+.timeline-content p {
+  text-align: justify;
+  word-spacing: 0.05rem;
+}
+
+.timeline-content {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .timeline-content {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .timeline-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .timeline-date {
+    font-size: 1rem;
+  }
+}
