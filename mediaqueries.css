@@ -180,3 +180,15 @@
   }
 }
 
+@media only screen and (max-width: 768px) {
+  .section__pic-container {
+    width: 200px;
+    height: 200px;
+    margin-top: 2rem;
+  }
+
+  .section__pic-container img {
+    object-fit: cover;
+  }
+}
+
