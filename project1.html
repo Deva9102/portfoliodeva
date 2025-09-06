@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Candidate Recommendation Engine</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #1e1e1e;
+      color: white;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #444;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  z-index: 999;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #666;
+}
+
+
+    .title {
+      text-align: center;
+      margin-bottom: 0.8rem;
+    }
+
+    .title h1 {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .overview {
+      text-align: center;
+      max-width: 800px;
+      font-size: 1rem;
+      color: #ccc;
+      margin-bottom: 1.8rem;
+    }
+
+    .boxes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .box {
+  flex: 1 1 48%;
+  background-color: #2a2a2a;
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  text-align: left; }
+
+
+    .box h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .box ul {
+      padding-left: 1rem;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #ddd;
+    }
+
+    .box p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #ddd;
+    }
+
+    .impact {
+      margin-top: 2rem;
+      text-align: center;
+      max-width: 900px;
+    }
+
+    .impact h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .impact p {
+      font-size: 0.95rem;
+      color: #ccc;
+      margin-bottom: 0.8rem;
+    }
+
+    .impact a {
+      color: #66b3ff;
+      font-weight: 500;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .boxes {
+        flex-direction: column;
+      }
+
+      .box {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">
+      <h1>Candidate Recommendation Engine</h1>
+    </div>
+    <div class="overview">
+      AI-powered engine that ranks resumes against a job description using semantic embeddings, keyword matching, experience parsing, and education fit, presented via a Streamlit dashboard.
+      <br/>
+      <br>
+    <div class="motivation">
+      <strong>Motivation:</strong> Recruiters spend hours scanning resumes manually. This project accelerates shortlisting by surfacing top candidates in seconds with transparent explanations.
+    </div>
+    <br/>
+    <div class="boxes">
+      <div class="box">
+    <h2>Key Contributions</h2>
+    <ul>
+    <li>Built an embedding pipeline with Sentence-Transformers (MPNet → MiniLM fallback) and robust preprocessing/truncation.</li>
+    <li>Designed multi-factor ranking: 40% semantic similarity, 30% keyword coverage, 20% experience fit, 10% education match.</li>
+    <li>Implemented JD keyword extraction with boosted headers and multi-word phrases for precise coverage scoring.</li>
+    <li>Developed experience parser handling ranges like “Jan 2020–Present” and phrases like “3+ years.”</li>
+    <li>Matched education fields, degrees, and certifications between JD and resumes.</li>
+    <li>Created an Insight Engine to highlight strengths/cautions (skills overlap, seniority, metrics density) for explainability.</li>
+    <li>Parsed resumes (PDF/TXT) with BERT NER + regex for metadata (name/email/phone).</li>
+    <li>Delivered a Streamlit interface with uploads, progress bar, metrics, insights, and summary dashboards.</li>
+    </ul>
+    </div>
+
+      <div class="box">
+        <h2>Tools & Technologies</h2>
+        <p>
+          Python, Streamlit, Sentence-Transformers, scikit-learn, PyTorch, HuggingFace Transformers (BERT NER/QA), fitz (PyMuPDF), Regex
+        </p>
+      </div>
+    </div>
+
+    <div class="impact">
+      <h2>Impact</h2>
+      <p>
+       Reduced candidate screening time while ensuring fairness and transparency. Clear score breakdowns and insights build trust in AI rankings for hiring teams.
+      </p>
+      <a href="https://github.com/Deva9102/candidate_recommendation_engine">GitHub: View Code</a>
+    </div>
+  </div>
+
+  <div class="back-button-container">
+  <a href="index.html#projects" class="back-button">← Back to Projects</a>
+
+  <div id="butterfly-wrap" aria-hidden="true">
+    <lottie-player
+      id="butterfly"
+      src="https://lottie.host/a63eb87e-3b82-4269-9c29-c5a7d8ef1c7d/bikL3EdUWi.json"
+      background="transparent"
+      speed="1"
+      loop
+      autoplay>
+    </lottie-player>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>

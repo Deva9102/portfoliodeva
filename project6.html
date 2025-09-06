@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PCB Defect Detection using YOLOv5</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #1e1e1e;
+      color: white;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #444;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  z-index: 999;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #666;
+}
+
+
+    .title {
+      text-align: center;
+      margin-bottom: 0.8rem;
+    }
+
+    .title h1 {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .overview {
+      text-align: center;
+      max-width: 800px;
+      font-size: 1rem;
+      color: #ccc;
+      margin-bottom: 1.8rem;
+    }
+
+    .boxes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .box {
+  flex: 1 1 48%;
+  background-color: #2a2a2a;
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  text-align: left; }
+
+
+    .box h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .box ul {
+      padding-left: 1rem;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #ddd;
+    }
+
+    .box p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #ddd;
+    }
+
+    .impact {
+      margin-top: 2rem;
+      text-align: center;
+      max-width: 900px;
+    }
+
+    .impact h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .impact p {
+      font-size: 0.95rem;
+      color: #ccc;
+      margin-bottom: 0.8rem;
+    }
+
+    .impact a {
+      color: #66b3ff;
+      font-weight: 500;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .boxes {
+        flex-direction: column;
+      }
+
+      .box {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">
+      <h1>PCB Defect Detection using YOLOv5</h1>
+    </div>
+    <div class="overview">
+    Automates the detection and classification of PCB defects using a YOLOv5 deep learning model, introduces a severity scoring system, and provides a Tkinter-based GUI for real-time inspection.
+    <br/>
+    <br>
+    <div class="motivation">
+      <strong>Motivation:</strong> Automates PCB defect detection to reduce inspection time and improve accuracy by reliably identifying micro-defects in high-volume production lines.
+    </div>
+    <br/>
+    <div class="boxes">
+      <div class="box">
+        <h2>Key Contributions</h2>
+        <ul>
+          <li>Converted XML annotations to YOLO format and organized a dataset of 100+ annotated PCB images covering six defect classes: Missing Hole, Mouse Bite, Open Circuit, Short, Spur, and Spurious Copper.</li>
+          <li>Trained a custom YOLOv5 model on the dataset with hyperparameter tuning, achieving high detection precision for all defect types.</li>
+          <li>Designed a severity scoring system based on defect type and bounding box size to prioritize faults visually and quantitatively.</li>
+          <li>Automated model evaluation and batch inference, saving outputs with labels and visualized results to disk for review.</li>
+          <li>Implemented a Tkinter-based GUI allowing users to upload a PCB image and visualize detected defects with bounding boxes and class specific severity scores.</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h2>Tools & Technologies</h2>
+        <p>
+          Python, PyTorch, OpenCV, YOLOv5, Tkinter, XML to YOLO conversion, PIL, NumPy, Matplotlib
+        </p>
+      </div>
+    </div>
+
+    <div class="impact">
+      <h2>Impact</h2>
+      <p>
+       Enabled fast and accurate defect detection across 100+ PCB samples with high model precision. The integrated GUI and severity scoring system support real-time deployment, minimizing human error and enhancing product quality control in manufacturing.
+      </p>
+      <a href="https://github.com/Deva9102/PCB_DefectDetection">GitHub: View Code</a>
+    </div>
+  </div>
+
+  <div class="back-button-container">
+  <a href="index.html#projects" class="back-button">← Back to Projects</a>
+
+  <div id="butterfly-wrap" aria-hidden="true">
+    <lottie-player
+      id="butterfly"
+      src="https://lottie.host/a63eb87e-3b82-4269-9c29-c5a7d8ef1c7d/bikL3EdUWi.json"
+      background="transparent"
+      speed="1"
+      loop
+      autoplay>
+    </lottie-player>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
