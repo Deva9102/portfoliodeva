@@ -135,52 +135,43 @@
 <body>
   <div class="container">
     <div class="title">
-      <h1>AI-Powered Oral Tissue Compatibility Evaluation for Dental Implants</h1>
+      <h1>Automated Highlight Generation from Soccer Matches</h1>
       <br/>
-      <p>Designed a deep learning–based diagnostic system that analyzes ultrasonography images to evaluate oral tissue compatibility for dental implants.</p>
+      <p>Built an AI-driven system to automatically generate highlight reels from full-length soccer match videos using deep learning for event detection and video summarization.</p>
       <br/>
-      <p><strong>Motivation:</strong> Early implant failures caused by soft tissue issues are more common than late failures, driving this research to improve tissue compatibility assessment using AI and ultrasonography.</p>
+      <p><strong>Motivation:</strong> Full soccer matches span over 90 minutes, with key moments scattered throughout. Manually reviewing and compiling highlights is time-consuming. This system identifies and ranks events like goals and fouls, generating concise highlight reels automatically. This saves time for fans, analysts, and broadcasters.</p>
     </div>
 
     <div class="section-boxes">
       <div class="box">
         <h2>Key Contributions</h2>
         <ul>
-          <li>Built a hybrid model combining Convolutional Neural Networks (CNNs) and Deep Belief Networks (DBNs) to extract and refine complex tissue patterns from ultrasonography images.</li>
-          <li>Implemented classification models using SVM, Random Forest, and Decision Tree, achieving 87% accuracy individually, and enhanced performance to 90.3% using Gradient Boosting ensemble learning.</li>
-          <li>Applied Grad-CAM visualizations to highlight the key regions in ultrasound scans influencing predictions.</li>
-          <li>Developed a real-time web interface allowing doctors to upload ultrasound images and receive instant compatibility predictions.</li>
-          <li>Curated a high quality dataset covering various oral pathologies (e.g., parotitis, sialadenitis, Sjögren’s disease) with preprocessing techniques such as histogram equalization, pixel normalization, and noise reduction.</li>
+          <li>Designed a video segmentation pipeline using the SoccerNet dataset, extracting labeled 10-second clips for key events like goals, fouls, shots, and corners.</li>
+          <li>Used ResNet50 to extract spatial features from video frames and GRUs to model temporal patterns for event classification.</li>
+          <li>Built a 3-layer GRU architecture followed by fully connected layers to classify events across five categories, improving accuracy with dataset expansion.</li>
+          <li>Developed a clip selection and stitching algorithm using a sliding window to include high-impact events within a 5-minute reel.</li>
+          <li>Collaborated on performance evaluation using confusion matrices, F1 plots, and loss curves to refine model performance.</li>
+          <li>Worked on stitching predicted clips into cohesive highlight videos with smooth transitions and temporal flow.</li>
         </ul>
       </div>
 
       <div class="box">
         <h2>Tools & Technologies</h2>
-        <p>Python, TensorFlowm, PyTorch, Scikit-learn, OpenCV, Grad-CAM, Pandas, Matplotlib, Web UI (Streamlit)</p>
+        <p>Python, OpenCV, ResNet50, GRU, PyTorch, SoccerNet Dataset, NumPy, Matplotlib</p>
       </div>
     </div>
 
     <div class="impact">
       <h2>Impact</h2>
       <p>
-        Enabled faster, safer dental implant decisions by giving dentists clear, AI-driven insights from ultrasonography images.
-      <a class="github-link" href="https://github.com/Deva9102/AI-Powered-OralTissue-Compatibility-Evaluation" target="_blank">GitHub: View Code</a>
+        Created an automated pipeline for match summarization that can assist broadcasters and sports analysts in generating highlight videos with less manual effort.
+      </p>
+      <a class="github-link" href="https://github.com/aatmaj28/Soccer-Highlight-Generation" target="_blank">GitHub: View Code</a>
     </div>
   </div>
 
    <div class="back-button-container">
   <a href="index.html#projects" class="back-button">← Back to Projects</a>
-
-  <div id="butterfly-wrap" aria-hidden="true">
-    <lottie-player
-      id="butterfly"
-      src="https://lottie.host/a63eb87e-3b82-4269-9c29-c5a7d8ef1c7d/bikL3EdUWi.json"
-      background="transparent"
-      speed="1"
-      loop
-      autoplay>
-    </lottie-player>
-  </div>
 <script src="script.js"></script>
 </body>
 </html>

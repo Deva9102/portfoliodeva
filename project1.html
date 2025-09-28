@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Candidate Recommendation Engine</title>
+  <title>NL2SQL using Retrieval-Augmented T5</title>
   <style>
     body {
       margin: 0;
@@ -23,33 +23,25 @@
     }
 
     .back-button {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  background-color: #444;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  text-decoration: none;
-  font-size: 0.9rem;
-  z-index: 999;
-  transition: background-color 0.3s ease;
-}
-
-.back-button:hover {
-  background-color: #666;
-}
-
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: #444;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      z-index: 999;
+      transition: background-color 0.3s ease;
+    }
+    .back-button:hover { background-color: #666; }
 
     .title {
       text-align: center;
       margin-bottom: 0.8rem;
     }
-
-    .title h1 {
-      font-size: 2rem;
-      font-weight: bold;
-    }
+    .title h1 { font-size: 2rem; font-weight: bold; }
 
     .overview {
       text-align: center;
@@ -68,13 +60,13 @@
     }
 
     .box {
-  flex: 1 1 48%;
-  background-color: #2a2a2a;
-  border-radius: 10px;
-  padding: 1rem 1.2rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  text-align: left; }
-
+      flex: 1 1 48%;
+      background-color: #2a2a2a;
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      text-align: left;
+    }
 
     .box h2 {
       font-size: 1.2rem;
@@ -100,66 +92,47 @@
       max-width: 900px;
     }
 
-    .impact h2 {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .impact p {
-      font-size: 0.95rem;
-      color: #ccc;
-      margin-bottom: 0.8rem;
-    }
-
-    .impact a {
-      color: #66b3ff;
-      font-weight: 500;
-      text-decoration: underline;
-    }
+    .impact h2 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+    .impact p  { font-size: 0.95rem; color: #ccc; margin-bottom: 0.8rem; }
+    .impact a  { color: #66b3ff; font-weight: 500; text-decoration: underline; }
 
     @media (max-width: 768px) {
-      .boxes {
-        flex-direction: column;
-      }
-
-      .box {
-        flex: 1 1 100%;
-      }
+      .boxes { flex-direction: column; }
+      .box   { flex: 1 1 100%; }
     }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="title">
-      <h1>Candidate Recommendation Engine</h1>
+      <h1>NL2SQL using Retrieval-Augmented T5</h1>
     </div>
+
     <div class="overview">
-      AI-powered engine that ranks resumes against a job description using semantic embeddings, keyword matching, experience parsing, and education fit, presented via a Streamlit dashboard.
-      <br/>
-      <br>
-    <div class="motivation">
-      <strong>Motivation:</strong> Recruiters spend hours scanning resumes manually. This project accelerates shortlisting by surfacing top candidates in seconds with transparent explanations.
+      AI-powered model that converts natural-language questions to executable SQL on the <strong>Spider</strong> dataset,
+      enhanced with a schema-aware RAG pipeline to reduce hallucinations and improve execution accuracy.
+      <br/><br/>
+      <div class="motivation">
+        <strong>Motivation:</strong> Writing SQL requires database expertise.
+        This project empowers non-technical users to query relational data in plain English.
+      </div>
     </div>
-    <br/>
+
     <div class="boxes">
       <div class="box">
-    <h2>Key Contributions</h2>
-    <ul>
-    <li>Built an embedding pipeline with Sentence-Transformers (MPNet → MiniLM fallback) and robust preprocessing/truncation.</li>
-    <li>Designed multi-factor ranking: 40% semantic similarity, 30% keyword coverage, 20% experience fit, 10% education match.</li>
-    <li>Implemented JD keyword extraction with boosted headers and multi-word phrases for precise coverage scoring.</li>
-    <li>Developed experience parser handling ranges like “Jan 2020–Present” and phrases like “3+ years.”</li>
-    <li>Matched education fields, degrees, and certifications between JD and resumes.</li>
-    <li>Created an Insight Engine to highlight strengths/cautions (skills overlap, seniority, metrics density) for explainability.</li>
-    <li>Parsed resumes (PDF/TXT) with BERT NER + regex for metadata (name/email/phone).</li>
-    <li>Delivered a Streamlit interface with uploads, progress bar, metrics, insights, and summary dashboards.</li>
-    </ul>
-    </div>
+        <h2>Key Contributions</h2>
+        <ul>
+          <li>Fine-tuned <strong>T5-base</strong> on Spider with <strong>AdamW</strong>, warm-up scheduler, gradient-accumulation, and mixed-precision training — achieved <strong>54.96 % execution accuracy</strong> on the test set.</li>
+          <li>Added <strong>RAG-powered schema retrieval</strong> using <strong>LangChain, LlamaIndex, Sentence-Transformer embeddings, FAISS</strong> to supply only relevant tables/columns to the model.</li>
+          <li>Deployed an interactive <strong>Streamlit UI</strong> for querying; the retrieval-augmented pipeline reached <strong>73.34 % execution accuracy on simple queries</strong> while cutting schema hallucinations.</li>
+          <li>Implemented checkpointing, exact-/execution-match evaluation, and schema-aware prompt formatting for better generalization.</li>
+        </ul>
+      </div>
 
       <div class="box">
         <h2>Tools & Technologies</h2>
         <p>
-          Python, Streamlit, Sentence-Transformers, scikit-learn, PyTorch, HuggingFace Transformers (BERT NER/QA), fitz (PyMuPDF), Regex
+          Python, PyTorch, Hugging Face Transformers (T5), LangChain, LlamaIndex, Sentence-Transformers, FAISS, Streamlit, SQLite, Spider dataset
         </p>
       </div>
     </div>
@@ -167,26 +140,14 @@
     <div class="impact">
       <h2>Impact</h2>
       <p>
-       Reduced candidate screening time while ensuring fairness and transparency. Clear score breakdowns and insights build trust in AI rankings for hiring teams.
+        Bridged the gap between natural-language questions and SQL for business users;
+        the retrieval module improved reliability and transparency in query generation.
       </p>
-      <a href="https://github.com/Deva9102/candidate_recommendation_engine">GitHub: View Code</a>
+      <a href="https://colab.research.google.com/drive/19TwRrhN5DkwhiiSiHfrVtIaWTjq_166a?usp=sharing#scrollTo=puxx5OeUoB6r">GitHub: View Code</a>
     </div>
   </div>
 
-  <div class="back-button-container">
   <a href="index.html#projects" class="back-button">← Back to Projects</a>
-
-  <div id="butterfly-wrap" aria-hidden="true">
-    <lottie-player
-      id="butterfly"
-      src="https://lottie.host/a63eb87e-3b82-4269-9c29-c5a7d8ef1c7d/bikL3EdUWi.json"
-      background="transparent"
-      speed="1"
-      loop
-      autoplay>
-    </lottie-player>
-  </div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

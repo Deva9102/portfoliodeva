@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recruiting Funnel Analytics</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #1e1e1e;
+      color: white;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: #444;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      z-index: 999;
+      transition: background-color 0.3s ease;
+    }
+    .back-button:hover { background-color: #666; }
+
+    .title { text-align: center; margin-bottom: 0.8rem; }
+    .title h1 { font-size: 2rem; font-weight: bold; }
+
+    .overview {
+      text-align: center;
+      max-width: 800px;
+      font-size: 1rem;
+      color: #ccc;
+      margin-bottom: 1.8rem;
+    }
+
+    .boxes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .box {
+      flex: 1 1 48%;
+      background-color: #2a2a2a;
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      text-align: left;
+    }
+
+    .box h2 { font-size: 1.2rem; margin-bottom: 0.8rem; }
+    .box ul {
+      padding-left: 1rem;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #ddd;
+    }
+    .box p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #ddd;
+    }
+
+    .impact {
+      margin-top: 2rem;
+      text-align: center;
+      max-width: 900px;
+    }
+    .impact h2 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+    .impact p  { font-size: 0.95rem; color: #ccc; margin-bottom: 0.8rem; }
+    .impact a  { color: #66b3ff; font-weight: 500; text-decoration: underline; }
+
+    @media (max-width: 768px) {
+      .boxes { flex-direction: column; }
+      .box   { flex: 1 1 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">
+      <h1>Recruiting Funnel Analytics</h1>
+    </div>
+
+    <div class="overview">
+      Analyzes an end-to-end recruitment pipeline using <strong>SQLite + SQL</strong> with a
+      <strong>star-schema</strong> design for fact + dimension tables, generating
+      analytics views for <em>conversion rates</em>, <em>stage durations</em>, and
+      <em>funnel drop-offs</em>. CSV exports are ready to visualize in <strong>Tableau</strong>.
+      <br/><br/>
+      <div class="motivation">
+        <strong>Motivation:</strong> Give talent teams a transparent, reproducible way
+        to track each hiring stage, spot bottlenecks early, and make data-driven
+        improvements.
+      </div>
+    </div>
+
+    <div class="boxes">
+      <div class="box">
+        <h2>Key Contributions</h2>
+        <ul>
+          <li>Designed a <strong>star-schema</strong> with <em>candidates, applications, stage events</em> fact &amp; dimension tables.</li>
+          <li>Built SQL views for <strong>funnel counts</strong>, <strong>stage-to-stage &amp; overall conversion</strong>, <strong>avg time-in-stage</strong>, <strong>education/location impact</strong>, and <strong>monthly cohorts</strong>.</li>
+          <li>Exported all views as <strong>CSV</strong> in <code>exports/</code> for seamless Tableau dashboarding.</li>
+          <li>Documented the pipeline with an <strong>ER diagram</strong> and schema DDL for easy onboarding.</li>
+          <li>Delivered actionable insights on drop-offs, candidate segments, and screening delays.</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h2>Tools &amp; Technologies</h2>
+        <p>
+          SQLite 3.45, SQL (DDL / DML / Views), Tableau (for visualization)
+        </p>
+        <h2 style="margin-top:1.2rem;">Sample Insights</h2>
+        <ul>
+          <li>Major drop-offs occur <strong>pre-interview</strong>.</li>
+          <li><strong>Graduates</strong> hire at ~<strong>71 %</strong> vs ~<strong>61 %</strong> for non-graduates.</li>
+          <li><strong>Semi-urban</strong> candidates convert ~<strong>77 %</strong> (urban 66 %, rural 61 %).</li>
+          <li><strong>Screening</strong> is the bottleneck (~<strong>8 days</strong> avg time-in-stage).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="impact">
+      <h2>Impact</h2>
+      <p>
+        Provided data-driven visibility into the hiring funnel enabling teams to
+        reduce bottlenecks, improve conversion rates, and focus on the stages with the
+        greatest ROI. CSV exports powered quick Tableau dashboards for leadership.
+      </p>
+      <a href="https://github.com/Deva9102/recruiting_funnel/tree/main">GitHub: View Code</a>
+    </div>
+  </div>
+
+  <div class="back-button-container">
+    <a href="index.html#projects" class="back-button">← Back to Projects</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

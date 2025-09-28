@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PCB Defect Detection using YOLOv5</title>
+  <title>Fetal Health Risk Prediction</title>
   <style>
     body {
       margin: 0;
@@ -131,32 +131,32 @@
 <body>
   <div class="container">
     <div class="title">
-      <h1>PCB Defect Detection using YOLOv5</h1>
+      <h1>Real-Time Image Captioning and Speech Generation</h1>
     </div>
     <div class="overview">
-    Automates the detection and classification of PCB defects using a YOLOv5 deep learning model, introduces a severity scoring system, and provides a Tkinter-based GUI for real-time inspection.
-    <br/>
-    <br>
+      Built an AI tool that converts visual scenes into audio descriptions using image captioning and text-to-speech, enhancing accessibility for visually impaired.
+      <br/>
+      <br>
     <div class="motivation">
-      <strong>Motivation:</strong> Automates PCB defect detection to reduce inspection time and improve accuracy by reliably identifying micro-defects in high-volume production lines.
+      <strong>Motivation:</strong> People with vision impairments often struggle to access visual information, as screen readers can't interpret images or scenes. This project bridges that gap by using AI to generate captions.
     </div>
     <br/>
     <div class="boxes">
       <div class="box">
         <h2>Key Contributions</h2>
         <ul>
-          <li>Converted XML annotations to YOLO format and organized a dataset of 100+ annotated PCB images covering six defect classes: Missing Hole, Mouse Bite, Open Circuit, Short, Spur, and Spurious Copper.</li>
-          <li>Trained a custom YOLOv5 model on the dataset with hyperparameter tuning, achieving high detection precision for all defect types.</li>
-          <li>Designed a severity scoring system based on defect type and bounding box size to prioritize faults visually and quantitatively.</li>
-          <li>Automated model evaluation and batch inference, saving outputs with labels and visualized results to disk for review.</li>
-          <li>Implemented a Tkinter-based GUI allowing users to upload a PCB image and visualize detected defects with bounding boxes and class specific severity scores.</li>
+          <li>Developed an image captioning system combining ResNet50/VGG16 for feature extraction with LSTM networks for generating descriptive, human-like captions.</li>
+          <li>Integrated text-to-speech (TTS) conversion to vocalize captions in multiple languages, enabling real-time auditory feedback.</li>
+          <li>Used Flickr8k and Flickr30k datasets, preprocessed with custom tokenization, lowercasing, and word-to-index mapping, then mapped image features to captions using pre-trained GloVe 300D embeddings.</li>
+          <li>Evaluated model performance using BLEU scores and improved results through fine-tuning and larger dataset training (30k images).</li>
+          <li>Built an interactive Streamlit web interface to capture, caption, and read out images in real-time for end-user accessibility.</li>
         </ul>
       </div>
 
       <div class="box">
         <h2>Tools & Technologies</h2>
         <p>
-          Python, PyTorch, OpenCV, YOLOv5, Tkinter, XML to YOLO conversion, PIL, NumPy, Matplotlib
+          Python, TensorFlow, Keras, OpenCV, Streamlit, ResNet50, VGG16, LSTM, Flickr8k & Flickr30k, BLEU Score, PyTorch, Text-to-Speech APIs
         </p>
       </div>
     </div>
@@ -164,27 +164,17 @@
     <div class="impact">
       <h2>Impact</h2>
       <p>
-       Enabled fast and accurate defect detection across 100+ PCB samples with high model precision. The integrated GUI and severity scoring system support real-time deployment, minimizing human error and enhancing product quality control in manufacturing.
+        Empowered visually impaired users to experience the visual world through spoken image descriptions, improving accessibility, independence, and interaction with their environment in real-time.
       </p>
-      <a href="https://github.com/Deva9102/PCB_DefectDetection">GitHub: View Code</a>
+      <a href="https://github.com/Deva9102/Real-Time-Image-Captioning-and-Speech-Generation/tree/main">GitHub: View Code</a>
     </div>
   </div>
 
   <div class="back-button-container">
   <a href="index.html#projects" class="back-button">← Back to Projects</a>
 
-  <div id="butterfly-wrap" aria-hidden="true">
-    <lottie-player
-      id="butterfly"
-      src="https://lottie.host/a63eb87e-3b82-4269-9c29-c5a7d8ef1c7d/bikL3EdUWi.json"
-      background="transparent"
-      speed="1"
-      loop
-      autoplay>
-    </lottie-player>
-  </div>
+
 
 <script src="script.js"></script>
 </body>
 </html>
-

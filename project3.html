@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Automated Highlight Generation</title>
+  <title>Fetal Health Risk Prediction</title>
   <style>
     body {
       margin: 0;
       padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #1e1e1e;
-      font-family: 'Segoe UI', sans-serif;
-      color: #fff;
+      color: white;
     }
 
     .container {
@@ -19,10 +19,10 @@
       padding: 2rem 1rem;
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
+      align-items: center;
     }
 
-        .back-button {
+    .back-button {
   position: absolute;
   top: 20px;
   left: 20px;
@@ -43,86 +43,81 @@
 
     .title {
       text-align: center;
+      margin-bottom: 0.8rem;
     }
 
     .title h1 {
-      font-size: 2.2rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
+      font-size: 2rem;
+      font-weight: bold;
     }
 
-    .title p {
+    .overview {
+      text-align: center;
+      max-width: 800px;
       font-size: 1rem;
       color: #ccc;
-      margin: 0.4rem auto;
-      line-height: 1.4;
-      max-width: 900px;
+      margin-bottom: 1.8rem;
     }
 
-    .section-boxes {
+    .boxes {
       display: flex;
       flex-wrap: wrap;
       gap: 1.5rem;
-      justify-content: space-between;
+      justify-content: center;
+      width: 100%;
     }
 
     .box {
       flex: 1 1 48%;
       background-color: #2a2a2a;
       border-radius: 10px;
-      padding: 1.2rem;
-      box-shadow: 0 0 6px rgba(0,0,0,0.2);
+      padding: 1rem 1.2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
 
     .box h2 {
-      margin: 0 0 0.6rem 0;
       font-size: 1.2rem;
-    }
-
-    .box ul,
-    .box p {
-      color: #ddd;
-      font-size: 0.95rem;
-      line-height: 1.4;
-      margin: 0;
+      margin-bottom: 0.8rem;
     }
 
     .box ul {
-      padding-left: 1.2rem;
+      padding-left: 1rem;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #ddd;
     }
 
-    .box ul li {
-      margin-bottom: 0.4rem;
+    .box p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #ddd;
     }
 
     .impact {
+      margin-top: 2rem;
       text-align: center;
-      margin-top: 1rem;
+      max-width: 900px;
     }
 
     .impact h2 {
       font-size: 1.2rem;
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.5rem;
     }
 
     .impact p {
       font-size: 0.95rem;
       color: #ccc;
-      max-width: 850px;
-      margin: 0 auto;
-      line-height: 1.4;
+      margin-bottom: 0.8rem;
     }
 
-    .github-link {
-      color: #4da6ff;
+    .impact a {
+      color: #66b3ff;
+      font-weight: 500;
       text-decoration: underline;
-      display: inline-block;
-      margin-top: 0.5rem;
-      font-size: 0.95rem;
     }
 
     @media (max-width: 768px) {
-      .section-boxes {
+      .boxes {
         flex-direction: column;
       }
 
@@ -135,54 +130,50 @@
 <body>
   <div class="container">
     <div class="title">
-      <h1>Automated Highlight Generation from Soccer Matches</h1>
-      <br/>
-      <p>Built an AI-driven system to automatically generate highlight reels from full-length soccer match videos using deep learning for event detection and video summarization.</p>
-      <br/>
-      <p><strong>Motivation:</strong> Full soccer matches span over 90 minutes, with key moments scattered throughout. Manually reviewing and compiling highlights is time-consuming. This system identifies and ranks events like goals and fouls, generating concise highlight reels automatically. This saves time for fans, analysts, and broadcasters.</p>
+      <h1>Fetal Health Risk Prediction and Patient Clustering</h1>
     </div>
-
-    <div class="section-boxes">
+    <div class="overview">
+      Developed a machine learning model to predict fetal health risks from cardiotocography data, enabling interpretable and accurate prenatal risk assessment.
+    </div>
+    <div class="motivation">
+      <strong>Motivation:</strong> With rising concern around prenatal complications, we aimed to leverage machine learning to build a scalable and interpretable system that can proactively flag potential fetal distress and help clinicians make timely, data-driven decisions.
+    </div>
+    <br/>
+    <div class="boxes">
       <div class="box">
         <h2>Key Contributions</h2>
         <ul>
-          <li>Designed a video segmentation pipeline using the SoccerNet dataset, extracting labeled 10-second clips for key events like goals, fouls, shots, and corners.</li>
-          <li>Used ResNet50 to extract spatial features from video frames and GRUs to model temporal patterns for event classification.</li>
-          <li>Built a 3-layer GRU architecture followed by fully connected layers to classify events across five categories, improving accuracy with dataset expansion.</li>
-          <li>Developed a clip selection and stitching algorithm using a sliding window to include high-impact events within a 5-minute reel.</li>
-          <li>Collaborated on performance evaluation using confusion matrices, F1 plots, and loss curves to refine model performance.</li>
-          <li>Worked on stitching predicted clips into cohesive highlight videos with smooth transitions and temporal flow.</li>
+          <li>Designed a custom continuous fetal risk score (0–100) using PCA to replace fixed class labels, allowing for more precise and meaningful predictions.</li>
+          <li>Built Ridge Regression, Random Forest, and XGBoost models from scratch in Python, and compared them with standard implementations using MAE, RMSE, and R² metrics.</li>
+          <li>Used SHAP explainability to uncover key clinical features driving risk, such as histogram width and variability measures.</li>
+          <li>Created a risk grouping pipeline using both standard and custom implementations of KMeans and Hierarchical Clustering, classifying patients into Low, Moderate, and High Risk.</li>
+          <li>Applied UMAP for dimensionality reduction and visualized clear cluster separations, supported by strong evaluation metrics like Silhouette Score (0.53).</li>
+          <li>Addressed class imbalance and redundant features through outlier filtering, stratified sampling, and correlation-based feature selection to improve model accuracy and reliability.</li>
         </ul>
       </div>
 
       <div class="box">
         <h2>Tools & Technologies</h2>
-        <p>Python, OpenCV, ResNet50, GRU, PyTorch, SoccerNet Dataset, NumPy, Matplotlib</p>
+        <p>
+          Python, Scikit-learn, XGBoost, SHAP, UMAP, PCA,
+          Ridge Regression, KMeans, Hierarchical Clustering, Matplotlib
+        </p>
       </div>
     </div>
 
     <div class="impact">
       <h2>Impact</h2>
       <p>
-        Created an automated pipeline for match summarization that can assist broadcasters and sports analysts in generating highlight videos with less manual effort.
+        Created a clinically interpretable and highly accurate ML pipeline that supports fetal health risk stratification and can potentially aid doctors in early diagnosis and decision-making.
       </p>
-      <a class="github-link" href="https://github.com/aatmaj28/Soccer-Highlight-Generation" target="_blank">GitHub: View Code</a>
+      <a href="https://github.com/Deva9102/Fetal-Health-Prediction-and-Clustering">GitHub: View Code</a>
     </div>
   </div>
 
-   <div class="back-button-container">
+  <div class="back-button-container">
   <a href="index.html#projects" class="back-button">← Back to Projects</a>
-  <div id="butterfly-wrap" aria-hidden="true">
-    <lottie-player
-      id="butterfly"
-      src="https://lottie.host/a63eb87e-3b82-4269-9c29-c5a7d8ef1c7d/bikL3EdUWi.json"
-      background="transparent"
-      speed="1"
-      loop
-      autoplay>
-    </lottie-player>
-  </div>
+
+
 <script src="script.js"></script>
 </body>
 </html>
-
